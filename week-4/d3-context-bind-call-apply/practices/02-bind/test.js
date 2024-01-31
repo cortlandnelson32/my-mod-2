@@ -6,10 +6,16 @@ const john = new Employee(
   "Dog Lover"
 )
 
-setTimeout(() => {
-  john.sayName()
-}, 2000)
+// setTimeout(() => {
+//   john.sayName()
+// }, 2000)
 
+// setTimeout(() => {
+//   john.sayOccupation()
+// }, 3000)
 setTimeout(() => {
-  john.sayOccupation()
-}, 3000)
+  sayName();
+  setTimeout(() => {
+      sayOccupation();
+  }, 3000);
+}, 2000);
