@@ -39,7 +39,10 @@ describe("Word", function () {
 
   describe("pigLatin function", function () {
     it("should return the word converted to pig latin", function () {
-      expect.fail("replace with your code");
+      // expect.fail("replace with your code");
+      const newWord = new Word('anything');
+      const result = newWord.pigLatin();
+      expect(result).to.equal('ai');
     });
   });
 });
