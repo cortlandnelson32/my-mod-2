@@ -8,14 +8,39 @@ class LinkedListNode {
 class LinkedList {
   constructor() {
     // Your code here
+    this.head = null;
+    this.length = 0;
   }
 
   addToHead(val) {
     // Your code here
+    const newNode = new LinkedListNode(val);
+    
+    newNode.next =  this.head;
+
+    this.head = newNode;
+
+    this.length++;
+    // this.head = new LinkedListNode(val, this.head);
+
   }
 
   addToTail(val) {
     // Your code here
+    const newNode = new LinkedListNode(val);
+
+    this.length++
+
+    if (!this.head){
+      this.head = newNode;
+    } else {
+      let currentNode = this.head;
+
+    while(currentNode.next){
+      currentNode = currentNode.next;
+    }
+    currentNode.next = newNode;
+    }
   }
 
   // You can use this function to help debug
