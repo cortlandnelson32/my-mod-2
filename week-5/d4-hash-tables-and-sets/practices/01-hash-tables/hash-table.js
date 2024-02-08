@@ -55,21 +55,20 @@ class HashTable {
   insertWithHashCollisions(key, value) {
     // Your code here
     const index = this.hashMod(key);
-
-    // Create a new key-value pair
     const newNode = new KeyValuePair(key, value);
+
+
      // Check if the bucket is empty
     if (!this.data[index]) {
-      // If the bucket is empty, insert the new node
       this.data[index] = newNode;
     } else {
-      // If the bucket is not empty, traverse the linked list
+      // If the bucket is not empty, traverse 
       let current = this.data[index];
 
       // Check if the key already exists in the linked list
       while (current) {
           if (current.key === key) {
-              // If the key exists, update the value and return
+            // change the value to the value passed in
               current.value = value;
               return;
           }
