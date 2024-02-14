@@ -16,23 +16,21 @@ class BinarySearchTree {
 
   insert(val, currentNode=this.root) {
     // Your code here
-    const newNode = { val, left: null, right: null };
-
-    if (!currentNode) {
-      this.root = newNode;
+    if (!this.root) {
+      this.root = new TreeNode(val);
       return;
     }
 
     while (true) {
       if (val < currentNode.val) {
         if (!currentNode.left) {
-          currentNode.left = newNode;
+          currentNode.left = new TreeNode(val);
           return;
         }
         currentNode = currentNode.left;
       } else {
         if (!currentNode.right) {
-          currentNode.right = newNode;
+          currentNode.right = new TreeNode(val);
           return;
         }
         currentNode = currentNode.right;
